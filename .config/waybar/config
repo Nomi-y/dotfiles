@@ -1,0 +1,93 @@
+{
+    "height": 35,
+    "modules-left": ["hyprland/workspaces"],
+
+    //"modules-center": [],
+
+    "modules-right": [
+    "pulseaudio", 
+    "custom/pipe",
+    "memory",
+    "custom/pipe",
+    "cpu", 
+    "custom/pipe",
+    "network", 
+    "custom/pipe",
+    "battery", 
+    "custom/pipe",
+    "clock"
+    ],
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "Europe/Vienna",
+        "tooltip-format": "<big><b>{:%Y %B}</b></big>\n<tt><span font-family='Jetbrains Mono'>{calendar}</span></tt>",
+        //"format-alt": "{:%Y-%m-%d}"
+        "format": "{:L%Y-%m-%d %H:%M}",
+        //"format": "{:%Y-%m-%d %H:%M}",
+        "calendar": {
+            "mode":     "month",
+            "on-scroll": 1, 
+            "format": {
+                        "months": "",
+                        "days": "{}",
+                        "weekdays": "<span color='#b35a42'>{}</span>",
+                        "weeks": "{:%W}",
+                        "today": "<span color='#b35a42'><b>{}</b></span>"
+            },
+        },
+    },
+    "cpu": {
+        "format": "{usage}%",
+//        "tooltip": false
+    },
+    "memory": {
+        "format": "{}%"
+    },
+
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% - {time}",
+        "format-charging": "^ {capacity}% - {time}",
+        "format-plugged": "{capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-time": "{H}h{m}m",
+        "tooltip-format": "{timeTo}\n{health}% Battery Health",
+        // "format-good": "", // An empty format will hide the module
+        "format-full": "100% - Full",
+        "interval": 10
+    },
+    "network": {
+        "format-wifi": "{ifname} {essid} {signalStrength}%",
+        "format-ethernet": "{ifname} {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "Disconnected",
+        "format-disconnected": "Disconnected",
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}%",
+        "format-muted": "Muted",
+        "format-source": "{volume}%",
+        "format-source-muted": "Muted",
+    },
+
+    "hyprland/workspaces": {
+
+    },
+
+    "custom/pipe": {
+        "format": "|",
+        "return-type": "json"
+    }
+
+}  
